@@ -3,6 +3,8 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import uuid
 
+# Probar API localmente http://127.0.0.1:8000/docs
+
 app = FastAPI()
 
 class User(BaseModel):
