@@ -20,3 +20,10 @@ users = []
 def create_user(user: User):
     users.append(user)
     return user
+
+# Obtener el primer usuario (GET)
+@app.get("/users/", status_code=status.HTTP_200_OK)
+def get_first_user():
+    if not users:
+        raise HTTPException(status_code=404, detail="No ti@, no he visto ese usuario")
+    return users[0]
